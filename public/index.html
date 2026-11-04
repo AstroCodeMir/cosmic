@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AstroCodeMir</title>
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='1em' font-size='80'%3E🌸%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <!-- ## NAVIGATION ## --> <!-- ## NAVIGATION ## --> <!-- ## NAVIGATION ## --> <!-- ## NAVIGATION ## -->
+    <!-- No. 0015 -->
+    <header class="absolute inset-x-0 top-0 z-50">
+        <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+            <div class="flex lg:flex-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-code h-6 w-6 text-purple-400">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+                <p class="text-md text-purple-400"> AstrocodeMir</p>
+            </div>
+            <div class="flex lg:hidden">
+                <button type="button" id="open-menu-btn"
+                    class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 lg:hidden">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                        aria-hidden="true" data-slot="icon">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+            </div>
+            <div class="hidden lg:flex lg:gap-x-12">
+                <a href="#" class="text-sm/6 font-semibold text-white">About</a>
+                <a href="#Features" class="text-sm/6 font-semibold  text-white">Project</a>
+                <a href="#skills" class="text-sm/6 font-semibold  text-white">Skills</a>
+                <a href="#Contact" class="text-sm/6 font-semibold  text-white">Contact</a>
+            </div>
+            <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+                <a href="#"
+                    class="rounded-md bg-purple-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-purple-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600 opacity-50">Download
+                    Resume</a>
+            </div>
+        </nav>
+        <!-- Mobile menu, show/hide based on menu open state. -->
+        <div id="mobile-menu-wrapper"
+            class="fixed inset-0 z-50 transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden hidden">
+            <div class="lg:hidden" role="dialog" aria-modal="true">
+                <div class="fixed inset-0 z-50 ">
+                    <div
+                        class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                        <div class="flex items-center justify-between">
+                            <a href="#" class="-m-1.5 p-1.5">
+                                <span class="sr-only">Your Company</span>
+                                <img class="h-8 w-auto"
+                                    src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
+                                    alt="" />
+                            </a>
+
+                            <button type="button" id="close-menu-btn"
+                                class="p-2 text-gray-700 hover:text-red-600 hover:bg-gray-100 rounded-full transition-colors duration-200">
+                                <span class="sr-only">Close menu</span>
+                                <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                    stroke="currentColor" aria-hidden="true" data-slot="icon">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="mt-6 flow-root">
+                            <div class="-my-6 divide-y divide-gray-500/10">
+                                <div class="space-y-2 py-6">
+                                    <a href="#"
+                                        class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">About</a>
+                                    <a href="#Features"
+                                        class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Project</a>
+                                    <a href="#skills"
+                                        class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Skills</a>
+                                    <a href="#Contact"
+                                        class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Contact</a>
+                                </div>
+                                <div class="py-6">
+                                    <a href="#"
+                                        class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Log
+                                        in</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="relative isolate px-6 pt-14 lg:px-8">
+        <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+            aria-hidden="true">
+            <div class="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 rotate-30 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-288.75"
+                style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+            </div>
+        </div>
+        <div class="mx-auto max-w-xl py-32 sm:py-32 lg:py-36">
+            <div class="hidden sm:mb-8 sm:flex sm:justify-center">
+            </div>
+            <div class="flex flex-col items-center text-center px-6 lg:px-8">
+                <div data-animate class="relative inline-block
+         opacity-0 translate-y-5
+         transition-all duration-700 ease-out
+         delay-100
+  ">
+                    <h1 class="inline-flex items-baseline font-extrabold text-5xl sm:text-7xl tracking-tight 
+             bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 
+             bg-clip-text text-transparent">
+                        <span>Francine</span>
+                        <span class="ml-2"> Famorcan</span>
+                    </h1>
+                </div>
+
+                <p data-animate class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8
+        opacity-0 translate-y-5
+         transition-all duration-700 ease-out
+         delay-200">
+                    Creative Web Designer and Innovator. <br>
+                    Creating beautiful and functional digital experiences
+                </p>
+
+                <div data-animate class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8
+        opacity-0 translate-y-5
+         transition-all duration-700 ease-out
+         delay-300">
+                    <div class="mt-10 flex items-center justify-center gap-x-6">
+                        <a href="#"
+                            class="rounded-md bg-purple-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-purple-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600">View
+                            My Work</a>
+                        <a href="#" class="rounded-md border border-white/10
+         outline outline-1 outline-purple-500/40
+         transition-[outline-color,background-color] duration-200 ease-in-out
+         hover:outline-purple-500/80 hover:bg-purple-500
+         px-3.5 py-2.5 text-sm font-semibold text-white shadow-lg
+         focus-visible:outline-indigo-500 focus-visible:outline-1 focus-visible:outline-offset-2">Get
+                            in Touch</a>
+                    </div>
+                </div>
+
+                <div class="mt-12 flex justify-center gap-6" style="opacity: 1; transform: none;"><a
+                        href="https://github.com/AstroCodeMir" target="_blank" rel="noopener noreferrer"
+                        class="text-foreground/60 text-white hover:text-purple-400 transition-colors"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-github h-6 w-6">
+                            <path
+                                d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4">
+                            </path>
+                            <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                        </svg><span class="sr-only">GitHub</span></a><a
+                        href="https://www.linkedin.com/in/francine-loi-famorcan-5173b6145/" target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-foreground/60 text-white hover:text-purple-400 transition-colors"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-linkedin h-6 w-6">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
+                            <rect width="4" height="12" x="2" y="9"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg><span class="sr-only">LinkedIn</span></a>
+
+                    <a href="/" target="_blank" rel="noopener noreferrer"
+                        class="text-foreground/60 text-white hover:text-purple-400 transition-colors"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-instagram h-6 w-6">
+                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                        </svg><span class="sr-only">Instagram</span></a>
+
+                    <a href="/" target="_blank" rel="noopener noreferrer"
+                        class="text-foreground/60 text-white hover:text-purple-400 transition-colors"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-facebook h-6 w-6">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg><span class="sr-only">Facebook</span></a>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+        aria-hidden="true">
+        <div class="relative left-[calc(50%+3rem)] aspect-1155/678 w-144.5 -translate-x-1/2 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-288.75"
+            style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <!-- ## PROJECTS ## -->
+    <section id="Features"
+        class="opacity-0 translate-y-5 opacity-100 translate-y-0 duration-700 ease-out text-white py-20 px-4"
+        data-animate>
+        <div class="max-w-7xl mx-auto text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">Featured Projects</h2>
+            <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">Here's a selection of my work. Check out all
+                my projects for a deeper dive.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+            <!-- Feature 1 -->
+            <div data-animate class="relative inline-block opacity-0 translate-y-5 
+            transition-all duration-700 ease-out delay-100">
+                <div class="relative p-10 rounded-xl border border-purple-500/30 
+              outline outline-1 outline-purple-500/40
+              bg-gray-900/80
+              hover:outline-purple-500/80 hover:shadow-[0_0_25px_rgba(168,85,247,0.8)]
+              transition-all duration-300 ease-in-out
+              flex flex-col items-center text-center gap-4">
+
+                    <!-- Title -->
+                    <h3 class="text-2xl font-semibold text-purple-400 feature-title">
+                        Aly's Craft Web App
+                    </h3>
+
+                    <!-- Description -->
+                    <p class="text-base text-gray-300 feature-desc max-w-xs">
+                        A web landing page that showcases the Aly's Handmade Crafts
+                    </p>
+
+                    <!-- Image -->
+                    <div class="w-80 h-40 rounded-xl overflow-hidden border border-purple-500/40 
+                transition-all duration-300">
+                        <img src="D:\Documents\4.WebDevelopment\AstroCodeMir\images\Lucent.png" alt="Project screenshot"
+                            class="w-full h-full object-cover" />
+                    </div>
+
+                    <!-- Tags -->
+                    <div class="items-center flex flex-wrap justify-center gap-2 pt-4">
+                        <div class="inline-flex items-center rounded-full border border-purple-500/70 
+                  px-3 py-1 text-xs font-semibold text-purple-400 transition-all duration-300">
+                            Web Development
+                        </div>
+                        <div class="inline-flex items-center rounded-full border border-purple-500/70 
+                  px-3 py-1 text-xs font-semibold text-purple-400 transition-all duration-300">
+                            AI Integration
+                        </div>
+                        <div class="inline-flex items-center rounded-full border border-purple-500/70 
+                  px-3 py-1 text-xs font-semibold text-purple-400 transition-all duration-300">
+                            GCP
+                        </div>
+                        <div class="inline-flex items-center rounded-full border border-purple-500/70 
+                  px-3 py-1 text-xs font-semibold text-purple-400 transition-all duration-300">
+                            Gemini API
+                        </div>
+                        <div class="inline-flex items-center rounded-full border border-purple-500/70 
+                  px-3 py-1 text-xs font-semibold text-purple-400 transition-all duration-300">
+                            Full-Stack
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div data-animate class="relative inline-block opacity-0 translate-y-5 
+            transition-all duration-700 ease-out delay-300">
+                <div class="relative p-10 rounded-xl border border-purple-500/30 
+              outline outline-1 outline-purple-500/40
+              bg-gray-900/80
+              hover:outline-purple-500/80 hover:shadow-[0_0_25px_rgba(168,85,247,0.8)]
+              transition-all duration-300 ease-in-out
+              flex flex-col items-center text-center gap-4">
+
+                    <!-- Title -->
+                    <h3 class="text-2xl font-semibold text-purple-400 feature-title">
+                        Aly's Craft Web App
+                    </h3>
+
+                    <!-- Description -->
+                    <p class="text-base text-gray-300 feature-desc max-w-xs">
+                        A web landing page that showcases the Aly's Handmade Crafts
+                    </p>
+
+                    <!-- Image -->
+                    <div class="w-80 h-40 rounded-xl overflow-hidden border border-purple-500/40 
+                transition-all duration-300">
+                        <img src="D:\Documents\4.WebDevelopment\AstroCodeMir\images\Lucent.png" alt="Project screenshot"
+                            class="w-full h-full object-cover" />
+                    </div>
+
+                    <!-- Tags -->
+                    <div class="items-center flex flex-wrap justify-center gap-2 pt-4">
+                        <div class="inline-flex items-center rounded-full border border-purple-500/70 
+                  px-3 py-1 text-xs font-semibold text-purple-400 transition-all duration-300">
+                            Web Development
+                        </div>
+                        <div class="inline-flex items-center rounded-full border border-purple-500/70 
+                  px-3 py-1 text-xs font-semibold text-purple-400 transition-all duration-300">
+                            AI Integration
+                        </div>
+                        <div class="inline-flex items-center rounded-full border border-purple-500/70 
+                  px-3 py-1 text-xs font-semibold text-purple-400 transition-all duration-300">
+                            GCP
+                        </div>
+                        <div class="inline-flex items-center rounded-full border border-purple-500/70 
+                  px-3 py-1 text-xs font-semibold text-purple-400 transition-all duration-300">
+                            Gemini API
+                        </div>
+                        <div class="inline-flex items-center rounded-full border border-purple-500/70 
+                  px-3 py-1 text-xs font-semibold text-purple-400 transition-all duration-300">
+                            Full-Stack
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Feature 3 -->
+            <div data-animate class="relative inline-block opacity-0 translate-y-5 
+            transition-all duration-700 ease-out delay-500">
+                <div class="relative p-10 rounded-xl border border-purple-500/30 
+              outline outline-1 outline-purple-500/40
+              bg-gray-900/80
+              hover:outline-purple-500/80 hover:shadow-[0_0_25px_rgba(168,85,247,0.8)]
+              transition-all duration-300 ease-in-out
+              flex flex-col items-center text-center gap-4">
+
+                    <!-- Title -->
+                    <h3 class="text-2xl font-semibold text-purple-400 feature-title">
+                        Aly's Craft Web App
+                    </h3>
+
+                    <!-- Description -->
+                    <p class="text-base text-gray-300 feature-desc max-w-xs">
+                        A web landing page that showcases the Aly's Handmade Crafts
+                    </p>
+
+                    <!-- Image -->
+                    <div class="w-80 h-40 rounded-xl overflow-hidden border border-purple-500/40 
+                transition-all duration-300">
+                        <img src="D:\Documents\4.WebDevelopment\AstroCodeMir\images\Lucent.png" alt="Project screenshot"
+                            class="w-full h-full object-cover" />
+                    </div>
+
+                    <!-- Tags -->
+                    <div class="items-center flex flex-wrap justify-center gap-2 pt-4">
+                        <div class="inline-flex items-center rounded-full border border-purple-500/70 
+                  px-3 py-1 text-xs font-semibold text-purple-400 transition-all duration-300">
+                            Web Development
+                        </div>
+                        <div class="inline-flex items-center rounded-full border border-purple-500/70 
+                  px-3 py-1 text-xs font-semibold text-purple-400 transition-all duration-300">
+                            AI Integration
+                        </div>
+                        <div class="inline-flex items-center rounded-full border border-purple-500/70 
+                  px-3 py-1 text-xs font-semibold text-purple-400 transition-all duration-300">
+                            GCP
+                        </div>
+                        <div class="inline-flex items-center rounded-full border border-purple-500/70 
+                  px-3 py-1 text-xs font-semibold text-purple-400 transition-all duration-300">
+                            Gemini API
+                        </div>
+                        <div class="inline-flex items-center rounded-full border border-purple-500/70 
+                  px-3 py-1 text-xs font-semibold text-purple-400 transition-all duration-300">
+                            Full-Stack
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+    </section>
+
+
+
+    <!-- ## SKILLS ## -->
+    <div class="relative isolate px-6 pt-14 lg:px-8 relative inline-block
+         opacity-0 translate-y-5
+         transition-all duration-700 ease-out
+         delay-100
+  ">
+        <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+            aria-hidden="true">
+            <div class="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 rotate-30 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-288.75"
+                style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+            </div>
+        </div>
+    </div>
+    <section id="skills"
+        class="container max-w-6xl mx-auto py-12 md:py-20 bg-secondary/50 rounded-lg my-12 text-white px-4 md:px-8">
+        <!-- Heading -->
+        <div class="text-center">
+            <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl font-headline">My Skillset</h2>
+            <p class="mt-4 max-w-2xl mx-auto text-muted-foreground md:text-xl/relaxed">
+                A combination of technical expertise and creative finesse to deliver outstanding results.
+            </p>
+        </div>
+
+        <!-- Skills Grid -->
+        <div class="mt-12 grid gap-12 sm:grid-cols-1 md:grid-cols-2">
+
+            <!-- Technical Skills -->
+            <div>
+                <h3 class="text-2xl font-semibold mb-6 text-center md:text-left">Technical Skills</h3>
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex flex-wrap justify-between items-center mb-1">
+                            <span class="text-base font-medium text-foreground">HTML & CSS</span>
+                            <span class="text-sm font-medium text-primary">95%</span>
+                        </div>
+                        <div class="relative w-full overflow-hidden rounded-full bg-secondary h-2">
+                            <div class="h-full bg-purple-500 progress-bar" data-progress="95"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex flex-wrap justify-between items-center mb-1">
+                            <span class="text-base font-medium text-foreground">JavaScript</span>
+                            <span class="text-sm font-medium text-primary">90%</span>
+                        </div>
+                        <div class="relative w-full overflow-hidden rounded-full bg-secondary h-2">
+                            <div class="h-full bg-purple-600 progress-bar" data-progress="90"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex flex-wrap justify-between items-center mb-1">
+                            <span class="text-base font-medium text-foreground">Node.js & Express.js</span>
+                            <span class="text-sm font-medium text-primary">85%</span>
+                        </div>
+                        <div class="relative w-full overflow-hidden rounded-full bg-secondary h-2">
+                            <div class="h-full bg-purple-600 progress-bar" data-progress="85"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex flex-wrap justify-between items-center mb-1">
+                            <span class="text-base font-medium text-foreground">Github & Version Control</span>
+                            <span class="text-sm font-medium text-primary">90%</span>
+                        </div>
+                        <div class="relative w-full overflow-hidden rounded-full bg-secondary h-2">
+                            <div class="h-full bg-purple-600 progress-bar" data-progress="90"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex flex-wrap justify-between items-center mb-1">
+                            <span class="text-base font-medium text-foreground">Figma</span>
+                            <span class="text-sm font-medium text-primary">85%</span>
+                        </div>
+                        <div class="relative w-full overflow-hidden rounded-full bg-secondary h-2">
+                            <div class="h-full bg-purple-600 progress-bar" data-progress="85"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex flex-wrap justify-between items-center mb-1">
+                            <span class="text-base font-medium text-foreground">Adobe Suite</span>
+                            <span class="text-sm font-medium text-primary">75%</span>
+                        </div>
+                        <div class="relative w-full overflow-hidden rounded-full bg-secondary h-2">
+                            <div class="h-full bg-purple-600 progress-bar" data-progress="75"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soft Skills -->
+            <div>
+                <h3 class="text-2xl font-semibold mb-6 text-center md:text-left">Soft Skills</h3>
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex flex-wrap justify-between items-center mb-1">
+                            <span class="text-base font-medium text-foreground">Communication</span>
+                            <span class="text-sm font-medium text-primary">95%</span>
+                        </div>
+                        <div class="relative w-full overflow-hidden rounded-full bg-secondary h-2">
+                            <div class="h-full bg-purple-600 progress-bar" data-progress="95"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex flex-wrap justify-between items-center mb-1">
+                            <span class="text-base font-medium text-foreground">Teamwork</span>
+                            <span class="text-sm font-medium text-primary">90%</span>
+                        </div>
+                        <div class="relative w-full overflow-hidden rounded-full bg-secondary h-2">
+                            <div class="h-full bg-purple-600 progress-bar" data-progress="90"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex flex-wrap justify-between items-center mb-1">
+                            <span class="text-base font-medium text-foreground">Problem Solving</span>
+                            <span class="text-sm font-medium text-primary">85%</span>
+                        </div>
+                        <div class="relative w-full overflow-hidden rounded-full bg-secondary h-2">
+                            <div class="h-full bg-purple-600 progress-bar" data-progress="85"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex flex-wrap justify-between items-center mb-1">
+                            <span class="text-base font-medium text-foreground">Creativity</span>
+                            <span class="text-sm font-medium text-primary">95%</span>
+                        </div>
+                        <div class="relative w-full overflow-hidden rounded-full bg-secondary h-2">
+                            <div class="h-full bg-purple-600 progress-bar" data-progress="95"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex flex-wrap justify-between items-center mb-1">
+                            <span class="text-base font-medium text-foreground">Adaptability</span>
+                            <span class="text-sm font-medium text-primary">80%</span>
+                        </div>
+                        <div class="relative w-full overflow-hidden rounded-full bg-secondary h-2">
+                            <div class="h-full bg-purple-600 progress-bar" data-progress="80"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex flex-wrap justify-between items-center mb-1">
+                            <span class="text-base font-medium text-foreground">Leadership</span>
+                            <span class="text-sm font-medium text-primary">75%</span>
+                        </div>
+                        <div class="relative w-full overflow-hidden rounded-full bg-secondary h-2">
+                            <div class="h-full bg-purple-600 progress-bar" data-progress="75"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ## CONTACT ## -->
+    <section id="Contact" class="opacity-0 translate-y-5 opacity-100 translate-y-0 duration-700 ease-out py-20 px-4"
+        data-animate>
+        <div class="text-center">
+            <h2 class="text-3xl text-white font-bold tracking-tighter sm:text-4xl font-headline">Get In Touch</h2>
+            <p class="mt-4 max-w-2xl mx-auto text-gray-400 md:text-xl/relaxed">I'm always open to discussing new
+                probjects, creative ideas, or opportunities to be part of your vision. Here are the best ways to reach
+                me.
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto mt-12" style="opacity: 1;">
+
+
+            <div data-animate class="relative inline-block
+         opacity-0 translate-y-5
+         transition-all duration-700 ease-out
+         delay-100
+  ">
+                <div class="rounded-lg border  border-[#A855F7]/70 text-card-foreground shadow-sm h-full flex flex-col justify-between text-center bg-card
+            outline-none outline outline-1 outline-purple-400 
+            hover:outline-purple-500 hover:shadow-purple-500/40 hover:shadow-lg
+            focus:outline-purple-400 focus:outline-2 focus:outline-offset-2
+            transition-all duration-200 ease-in-out">
+                    <div class="flex flex-col space-y-1.5 p-6 items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide w-8 h-8 stroke-current text-purple-400">
+                            <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                        </svg>
+                        <h3 class="text-2xl text-white font-semibold leading-none tracking-tight mt-4">Email</h3>
+                        <p class="text-sm text-gray-100">franzaynfamorcan@gmail.com</p>
+                    </div>
+                    <div class="p-6 pt-0 flex-grow flex items-end justify-center">
+                        <a href="https://mail.google.com/mail/u/0/?pli=1#inbox?compose=new" target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium bg-purple-600 text-white hover:bg-purple-700 ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 focus-visible:ring-offset-2disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 w-full">
+                            Send an Email
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide ml-2 w-4 h-4">
+                                <path d="M15 3h6v6"></path>
+                                <path d="M10 14 21 3"></path>
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div data-animate class="relative inline-block
+         opacity-0 translate-y-5
+         transition-all duration-700 ease-out
+         delay-200
+  ">
+                <div class="rounded-lg border  border-[#A855F7]/70 text-card-foreground shadow-sm h-full flex flex-col justify-between text-center bg-card
+            outline-none outline outline-1 outline-purple-400 
+            hover:outline-purple-500 hover:shadow-purple-500/40 hover:shadow-lg
+            focus:outline-purple-400 focus:outline-2 focus:outline-offset-2
+            transition-all duration-200 ease-in-out">
+                    <div class="flex flex-col space-y-1.5 p-6 items-center"><svg xmlns="http://www.w3.org/2000/svg"
+                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-linkedin w-8 h-8 text-purple-400">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
+                            <rect width="4" height="12" x="2" y="9"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                        <h3 class="text-2xl text-white font-semibold leading-none tracking-tight mt-4">LinkedIn</h3>
+                        <p class="text-sm text-white">Francine Famorcan</p>
+                    </div>
+                    <div class="p-6 pt-0 flex-grow flex items-end justify-center">
+                        <a href="https://www.linkedin.com/in/francine-loi-famorcan-5173b6145/" target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center justify-center gap-1 whitespace-nowrap rounded-md text-sm font-medium bg-purple-600 text-white hover:bg-purple-700 ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 focus-visible:ring-offset-2disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 w-full">
+                            Connect on Linkedin
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide ml-2 w-4 h-4">
+                                <path d="M15 3h6v6"></path>
+                                <path d="M10 14 21 3"></path>
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div data-animate class="relative inline-block
+         opacity-0 translate-y-5
+         transition-all duration-700 ease-out
+         delay-300
+  ">
+                <div class="rounded-lg border  border-[#A855F7]/70 text-card-foreground shadow-sm h-full flex flex-col justify-between text-center bg-card
+            outline-none outline outline-1 outline-purple-400 
+            hover:outline-purple-500 hover:shadow-purple-500/40 hover:shadow-lg
+            focus:outline-purple-400 focus:outline-2 focus:outline-offset-2
+            transition-all duration-200 ease-in-out">
+                    <div class="flex flex-col space-y-1.5 p-6 items-center"><svg xmlns="http://www.w3.org/2000/svg"
+                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-github w-8 h-8 text-purple-400">
+                            <path
+                                d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4">
+                            </path>
+                            <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                        </svg>
+                        <h3 class="text-2xl text-white font-semibold leading-none tracking-tight mt-4">GitHub</h3>
+                        <p class="text-sm text-white">AstroCodeMir</p>
+                    </div>
+                    <div class="p-6 pt-0 flex-grow flex items-end justify-center">
+                        <a href="https://github.com/AstroCodeMir" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium bg-purple-600 text-white hover:bg-purple-700 ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 focus-visible:ring-offset-2disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 w-full">
+                            View on Github
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide ml-2 w-4 h-4">
+                                <path d="M15 3h6v6"></path>
+                                <path d="M10 14 21 3"></path>
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div data-animate class="relative inline-block
+         opacity-0 translate-y-5
+         transition-all duration-700 ease-out
+         delay-400
+  ">
+
+                <div class="rounded-lg border  border-[#A855F7]/70 text-card-foreground shadow-sm h-full flex flex-col justify-between text-center bg-card
+            outline-none outline outline-1 outline-purple-400 
+            hover:outline-purple-500 hover:shadow-purple-500/40 hover:shadow-lg
+            focus:outline-purple-400 focus:outline-2 focus:outline-offset-2
+            transition-all duration-200 ease-in-out">
+                    <div class="flex flex-col space-y-1.5 p-6 items-center"><svg xmlns="http://www.w3.org/2000/svg"
+                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-phone w-8 h-8 text-purple-400">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                            </path>
+                        </svg>
+                        <h3 class="text-2xl text-white font-semibold leading-none tracking-tight mt-4">WhatsApp</h3>
+                        <p class="text-sm text-white">+63 918 499 4135</p>
+                    </div>
+                    <div class="p-6 pt-0 flex-grow flex items-end justify-center">
+                        <a href="mailto:/" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center justify-center gap-1 whitespace-nowrap rounded-md text-sm font-medium bg-purple-600 text-white hover:bg-purple-700 ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 focus-visible:ring-offset-2disabled:pointer-events-none disabled:opacity-50 h-10 py-2 w-full">
+                            Message on WhatsApp
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide ml-2 w-4 h-4">
+                                <path d="M15 3h6v6"></path>
+                                <path d="M10 14 21 3"></path>
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ## FOOTER ## --> <!-- ## FOOTER ## --> <!-- ## FOOTER ## --> <!-- ## FOOTER ## -->
+    <footer class="border-t border-border/40 py-8 bg-[#1A1A1D]">
+        <div class="container flex flex-col items-center justify-between gap-4 md:flex-row">
+            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" class="lucide lucide-code h-6 w-6 text-white">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+                <p class="text-sm text-white">© <!-- -->2025<!-- --> FrancineFamorcan. All Rights Reserved.</p>
+            </div>
+            <div class="flex gap-4"><a href="/" target="_blank" rel="noopener noreferrer"
+                    class="text-foreground/60 text-purple-400 transition-colors"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github h-5 w-5">
+                        <path
+                            d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4">
+                        </path>
+                        <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                    </svg><span class="sr-only">GitHub</span></a><a href="/" target="_blank" rel="noopener noreferrer"
+                    class="text-foreground/60 text-purple-400 transition-colors"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin h-5 w-5">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect width="4" height="12" x="2" y="9"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg><span class="sr-only">LinkedIn</span></a><a href="/" target="_blank" rel="noopener noreferrer"
+                    class="text-foreground/60 text-purple-400 transition-colors"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram h-5 w-5">
+                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                    </svg><span class="sr-only">Instagram</span></a><a href="/" target="_blank"
+                    rel="noopener noreferrer" class="text-foreground/60 text-purple-400 transition-colors"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-facebook h-5 w-5">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                    </svg><span class="sr-only">Facebook</span></a></div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
