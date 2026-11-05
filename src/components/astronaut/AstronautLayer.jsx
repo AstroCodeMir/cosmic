@@ -16,3 +16,4 @@ export default function AstronautLayer({ progress }) {
   const staticStyle = reducedMotion ? { left: '74.5%', top: '50.5%' } : undefined
   return <div ref={layerRef} className="astronaut-layer" data-scroll-progress={progress.toFixed(3)} style={staticStyle} aria-hidden="true"><AstronautSprite progress={progress} reducedMotion={reducedMotion} motionRef={motionRef} /></div>
 }
+

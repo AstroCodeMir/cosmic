@@ -34,3 +34,4 @@ export default function AstronautSprite({ progress, reducedMotion, motionRef }) 
     <span className="sprite-jet sprite-jet-right" aria-hidden="true" />
   </div>
 }
+
