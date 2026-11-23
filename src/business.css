@@ -4,4 +4,10 @@
 .hero h1:after{content:'Francine Famorcan';display:block;font-size:clamp(64px,9vw,128px);line-height:.94;letter-spacing:-.085em;font-weight:700}
 .service-card{border-color:#302c3d}
 .service-card:hover,.service-card:focus-within{border-color:var(--accent)}
+.contact-links>a{grid-template-columns:24px 105px 1fr 24px;column-gap:18px}
+.contact-links>a>span{display:flex;align-items:center;gap:8px}
+.social-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
+.social-links a{display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border:1px solid var(--line);color:var(--muted);font-size:11px;transition:border-color .2s,color .2s}
+.social-links a:hover,.social-links a:focus-visible{border-color:var(--accent);color:#fff}
+.social-links a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.service-card{transition:none}.button:hover{transform:none}}
