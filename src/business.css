@@ -1,0 +1,7 @@
+:root{--accent:#ff8a3d;--accent-soft:#d96f2e}
+.studio-label{display:none}
+.hero h1{font-size:0}
+.hero h1:after{content:'Francine Famorcan';display:block;font-size:clamp(64px,9vw,128px);line-height:.94;letter-spacing:-.085em;font-weight:700}
+.service-card{border-color:#302c3d}
+.service-card:hover,.service-card:focus-within{border-color:var(--accent)}
+@media(prefers-reduced-motion:reduce){.service-card{transition:none}.button:hover{transform:none}}

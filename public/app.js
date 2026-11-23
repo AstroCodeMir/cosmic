@@ -1,3 +1,4 @@
+/* global lucide */
 // document.addEventListener('DOMContentLoaded', () => {
 //   const animateItems = document.querySelectorAll('[data-animate]');
 //   const fadeItems = document.querySelectorAll('[data-fade]');
