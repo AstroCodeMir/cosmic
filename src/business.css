@@ -10,4 +10,5 @@
 .social-links a{display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border:1px solid var(--line);color:var(--muted);font-size:11px;transition:border-color .2s,color .2s}
 .social-links a:hover,.social-links a:focus-visible{border-color:var(--accent);color:#fff}
 .social-links a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.project-live-preview{position:absolute;inset:0;width:100%;height:100%;border:0;background:#101014}
 @media(prefers-reduced-motion:reduce){.service-card{transition:none}.button:hover{transform:none}}
